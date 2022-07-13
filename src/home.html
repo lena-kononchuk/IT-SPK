@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="page__main main">
+				<div class="main__container">
+					<div class="main__content">
+						<h1 class="main__title">IT-Аутсорсинг компаниям в Киеве</h1>
+						<p class="main__subtitle">Обслуживание компьютеров в Киеве</p>
+						<p class="main__price">От <span>315грн</span>/мес</p>
+						<p class="main__text">за 1 рабочее место</p>
+						<button data-popup="#callback" type="button" class="main__button button"><span
+								class="_icon-arrowRight"></span> Отправить
+							заявку</button>
+					</div>
+					<div class="main__desc">Мы знаем как сложно найти хорошую компанию по обслуживанию компьютеров в Киеве.
+						Исправим это!
+					</div>
+				</div>
+			</section>
+			<section class="page__block-about about-block">
+				<div class="about-block__container">
+					<div class="about-block__content">
+						<h2 class="about-block__title title">О нас </h2>
+						<div class="about-block__text">IT-SPK - сервисная компания по обслуживанию АйТи инфраструктуры для
+							бизнеса. Мы небольшая команда фанатов своего дела c многолетним опытом работы. Решаем любые ИТ
+							задачи в Киеве: проектирование, монтаж и поддержка ИТ инфраструктуры, настройка и поддержка
+							серверов, виртуализация, обслуживание компьютеров, поддержка пользователей.</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__block-services services-block">
+				<div class="services-block__container">
+					<div class="services-block__content">
+						<h2 class="services-block__title title">Услуги</h2>
+						<div class="services-block__body-items items-body">
+							<div class="items-body__item">
+								<div class="items-body__icon">
+									<img src="@img/icon/pc.svg" alt="PC">
+								</div>
+								<div class="items-body__text">Обслуживание компьютеров</div>
+							</div>
+							<div class="items-body__item">
+								<div class="items-body__icon">
+									<img src="@img/icon/server.svg" alt="Server">
+								</div>
+								<div class="items-body__text">Обслуживание серверов</div>
+							</div>
+							<div class="items-body__item">
+								<div class="items-body__icon">
+									<img src="@img/icon/1c.svg" alt="1C">
+								</div>
+								<div class="items-body__text">Виртуализация 1С</div>
+							</div>
+							<div class="items-body__item">
+								<div class="items-body__icon">
+									<img src="@img/icon/audit.svg" alt="Audit">
+								</div>
+								<div class="items-body__text">Аудит ИТ-инфраструктуры
+									и проектирование</div>
+							</div>
+							<div class="items-body__item">
+								<div class="items-body__icon">
+									<img src="@img/icon/copy.svg" alt="Copy">
+								</div>
+								<div class="items-body__text">Резервное копирование</div>
+							</div>
+							<div class="items-body__item">
+								<div class="items-body__icon">
+									<img src="@img/icon/move.svg" alt="Move">
+								</div>
+								<div class="items-body__text">Переезд ИТ инфраструктуры</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

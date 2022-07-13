@@ -1,0 +1,61 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-icon_c1:before {
+	content: "\e900";
+}
+
+._icon-affterDone:before {
+	content: "\e901";
+}
+
+._icon-arrowdown:before {
+	content: "\e902";
+}
+
+._icon-arrowRight:before {
+	content: "\e903";
+}
+
+._icon-audit:before {
+	content: "\e904";
+}
+
+._icon-copy:before {
+	content: "\e905";
+}
+
+._icon-done:before {
+	content: "\e906";
+}
+
+._icon-logo:before {
+	content: "\e907";
+}
+
+._icon-move:before {
+	content: "\e908";
+}
+
+._icon-pc:before {
+	content: "\e909";
+}
+
+._icon-server:before {
+	content: "\e90a";
+}

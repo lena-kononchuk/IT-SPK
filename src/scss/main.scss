@@ -5,21 +5,31 @@
 
    &__container {
       display: flex;
+      justify-content: space-between;
+
+      @media (max-width:$mobile) {
+         display: grid;
+      }
    }
 
    // .main__content
    &__content {
-      @include adaptiveValue("padding-top", 155, 40);
+      @include adaptiveValue("padding-top", 155, 172);
       @include adaptiveValue("padding-bottom", 70, 40);
       color: $mainBlueColor;
+      max-width: rem(568);
+
+      @media (max-width:$mobileSmall) {
+         max-width: rem(333);
+      }
    }
 
    // .main__title
    &__title {
       font-weight: 900;
-      @include adaptiveValue(" font-size", 50, 34);
-      line-height: math.div(25, 18);
-      @include adaptiveValue("padding-bottom", 57, 34);
+      @include adaptiveValue(" font-size", 50, 35);
+      // line-height: math.div(20, 18);
+      @include adaptiveValue("padding-bottom", 57, 46);
    }
 
    // .main__subtitle
@@ -27,6 +37,10 @@
       font-weight: 900;
       @include adaptiveValue("font-size", 18, 16);
       line-height: math.div(19, 14);
+
+      @media (max-width:$mobileSmall) {
+         max-width: rem(222);
+      }
    }
 
    // .main__price
@@ -65,35 +79,48 @@
       color: #FFFFFF;
       text-align: right;
       @include adaptiveValue("padding-bottom", 70, 40);
+
+      @media (max-width:$mobile) {
+         text-align: start;
+      }
    }
 }
 
 //====================================================================================================
 //block about
 .about-block {
-   @include adaptiveValue("padding-top", 97, 50);
+   @include adaptiveValue("padding-top", 97, 45);
    @include adaptiveValue("padding-bottom", 23, 15);
 
    // .about-block__content
    &__content {
       display: flex;
       justify-content: space-between;
+
+      @media (max-width:$tablet) {
+         display: block;
+      }
    }
 
    // .about-block__title
 
    &__title {
       justify-content: flex-start;
+
    }
 
    // .about-block__text
 
    &__text {
       max-width: rem(810);
-      @include adaptiveValue("padding-left", 70, 30);
-      font-size: rem(18);
+      padding-left: rem(70);
+      @include adaptiveValue("font-size", 18, 16);
       line-height: math.div(25, 14);
       color: #252D37;
+
+      @media (max-width:$tablet) {
+         padding: rem(20) 0 0 0;
+      }
    }
 }
 
@@ -119,31 +146,30 @@
 .items-body {
    display: grid;
    grid-template-columns: repeat(3, auto);
-   gap: rem(106);
+   // gap: rem(102);
+   @include adaptiveValue("row-gap", 102, 38);
    justify-content: space-between;
+   align-items: flex-start;
 
    @media (max-width:$tablet) {
-      row-gap: rem(30);
+      // row-gap: rem(30);
       grid-template-columns: repeat(2, 1fr);
-      justify-items: flex-start;
+      align-items: center;
    }
 
-   // @media (max-width:$mobile) {
-   //    grid-template-columns: repeat(1, 1fr);
-   //    justify-items: center;
-   //    max-width: 100%;
-   // }
+   @media (max-width:$mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: start;
+   }
 
    // .items-body__item
    &__item {
       display: flex;
       max-width: rem(290);
       align-items: flex-start;
-      grid-template-rows: 77px auto;
 
-
-      &:not(:last-child) {
-         margin-bottom: em(63, 40);
+      @media (max-width:$mobile) {
+         max-width: 100%;
       }
 
    }
@@ -156,22 +182,174 @@
       &::after {
          content: '';
          position: absolute;
-         width: 63px;
-         height: 53px;
+         width: rem(63);
+         height: rem(53);
          left: rem(14);
          top: rem(14);
          background: $mainBlueColor;
          z-index: -1;
+         overflow: hidden;
       }
    }
 
    // .items-body__text
    &__text {
-      @include adaptiveValue("padding-left", 27, 15);
-      align-self: center;
+      @include adaptiveValue("padding-left", 35, 33);
       font-weight: 700;
-      font-size: rem(18);
-      line-height: math.div(23, 18);
+      @include adaptiveValue("padding-top", 14, 28);
+      @include adaptiveValue("font-size", 18, 16);
+      line-height: math.div(23, 20);
       color: #001E42;
+
+      @media (max-width:$mobile) {
+         width: 100%;
+      }
    }
+}
+
+//========================================================================================================================================================
+//order block
+.order-block {
+
+   // .order-block__content
+   &__content {
+      @include adaptiveValue("padding-top", 48, 33);
+      @include adaptiveValue("padding-bottom", 65, 15);
+   }
+}
+
+.content-block {
+
+   // .content-block__text
+   &__text {
+      @include adaptiveValue("font-size", 24, 22);
+      line-height: math.div(29, 27);
+      font-weight: 700;
+      @include adaptiveValue("padding-bottom", 69, 15);
+   }
+
+   // .content-block__images
+   &__images {
+      @include adaptiveValue("padding-bottom", 111, 38);
+   }
+
+   // .content-block__items
+   &__items {
+      @include adaptiveValue("padding-bottom", 67, 20);
+   }
+}
+
+.text-block {
+
+   // .text-block__title
+   &__title {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 24, 22);
+      line-height: math.div(29, 27);
+      color: #001E42;
+      padding-bottom: rem(31);
+   }
+
+   // .text-block__text
+   &__text {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      @include adaptiveValue("padding-bottom", 42, 34);
+
+      p {
+         font-weight: 400;
+         @include adaptiveValue("font-size", 18, 16);
+         line-height: math.div(25, 20);
+         color: #252D37;
+
+         &:not(:last-child) {
+            padding-right: rem(30);
+         }
+      }
+   }
+}
+
+.images-block {
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   gap: rem(100);
+   @include adaptiveValue("gap", 100, 20);
+   font-weight: 700;
+   color: #001E42;
+
+   @media (max-width:$mobile) {
+      grid-template-columns: repeat(1, auto);
+      width: 100%;
+   }
+
+   // .images-block__img
+   &__img {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      @include adaptiveValue("margin-left", 86, 10);
+
+      @media (max-width:$tablet) {
+         margin-left: 0;
+      }
+
+      @media (max-width:$mobile) {
+         display: flex;
+      }
+   }
+
+   // .images-block__title
+   &__title {
+      align-self: center;
+      line-height: math.div(48, 35);
+      @include adaptiveValue("font-size", 48, 38);
+      max-width: rem(174);
+      padding-top: rem(30);
+      padding-left: rem(10);
+
+   }
+
+   // .images-block__text
+   &__text {
+      align-self: flex-end;
+      max-width: rem(521);
+      padding-left: rem(17);
+      @include adaptiveValue("font-size", 24, 22);
+      line-height: math.div(28, 20);
+      padding-top: rem(30);
+
+      @media (max-width:$mobile) {
+         width: 100%;
+         padding-left: rem(0);
+      }
+   }
+}
+
+.items-block {
+   display: grid;
+   grid-template-columns: repeat(3, auto);
+   gap: rem(82);
+   font-weight: 700;
+   font-size: rem(18);
+   line-height: rem(22);
+   color: #001E42;
+
+
+   &__item {
+      position: relative;
+
+      span {
+         position: absolute;
+         left: rem(-17);
+         top: rem(-49);
+         margin-bottom: 30px;
+         z-index: -1;
+         font-weight: 700;
+         font-size: 96px;
+         line-height: 117px;
+         letter-spacing: 0.05em;
+         text-transform: uppercase;
+         color: $mainBlueColor;
+      }
+   }
+
 }

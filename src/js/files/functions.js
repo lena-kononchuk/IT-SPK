@@ -135,7 +135,7 @@ export let bodyLockToggle = (delay = 500) => {
 	if (document.documentElement.classList.contains('lock')) {
 		bodyUnlock(delay);
 	} else {
-		bodyLock(delay);
+		// bodyLock(delay);
 	}
 }
 export let bodyUnlock = (delay = 500) => {
@@ -162,9 +162,9 @@ export let bodyLock = (delay = 500) => {
 		let lock_padding = document.querySelectorAll("[data-lp]");
 		for (let index = 0; index < lock_padding.length; index++) {
 			const el = lock_padding[index];
-			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth;
 		}
-		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth;
 		document.documentElement.classList.add("lock");
 
 		bodyLockStatus = false;

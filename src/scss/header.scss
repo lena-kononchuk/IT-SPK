@@ -8,13 +8,35 @@
 
 	// .header__body
 	&__body {
-		display: flex;
-		justify-content: space-between;
+		// display: flex;
+		// row-gap: 5px;
+
+		@media (max-width: $mobile) {
+			flex: 1 1 auto;
+			display: flex;
+			justify-content: space-between;
+
+		}
 	}
 }
 
 .body-header {
-	padding: rem(37) 0 rem(13) 0;
+	padding: rem(37) 0;
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+
+	// .body-header__top
+	&__top {
+		// padding: rem(37) 0 rem(13) 0;
+		align-items: center;
+		flex: 1 1 auto;
+		display: flex;
+
+		@media (max-width:$mobile) {
+			display: none;
+		}
+	}
 
 	// .body-header__logo
 	&__logo {
@@ -23,6 +45,10 @@
 		font-size: rem(32);
 		color: $mainBlueColor;
 		position: relative;
+
+		@media (max-width: $mobile) {
+			flex: 1 1 auto;
+		}
 
 		&::after {
 			content: 'UA';
@@ -36,23 +62,36 @@
 			border: 1px solid $mainBlueColor;
 			border-radius: 50%;
 			padding: rem(3);
+
 		}
 	}
 
-	// .body-header__menu
-	&__menu {}
-
 	// .body-header__actions
 	&__actions {}
+
+	.menu {
+		@media (max-width: $mobile) {
+			display: flex;
+		}
+
+		// .menu__icon
+		&__icon {}
+
+		// .menu__body
+		&__body {}
+	}
+
 }
 
 .menu-header {
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
 
 	// .menu-header__list
 	&__list {
 		display: flex;
-		gap: rem(37);
-		justify-content: space-between;
+		@include adaptiveValue("gap", 37, 20);
 	}
 
 	// .menu-header__item
@@ -61,7 +100,7 @@
 	// .menu-header__link
 	&__link {
 		font-weight: 400;
-		font-size: rem(18);
+		@include adaptiveValue("font-size", 18, 16);
 		line-height: math.div(22, 18);
 		color: #FFFFFF;
 		transition: all 0.6s ease 0s;
@@ -72,11 +111,16 @@
 			}
 		}
 	}
+
+	@media (max-width:$mobile) {
+		display: none;
+	}
 }
+
 
 .phones-header {
 	color: #FFFFFF;
-	margin-top: rem(-10);
+	align-self: flex-end;
 
 	&__item {
 		font-weight: 400;
@@ -87,14 +131,13 @@
 			display: inline-block;
 			width: rem(61);
 		}
-
 	}
 
 	// .phones-header__link
 	&__link {
 		span {
 			font-weight: 700;
-			font-size: rem(17);
+			@include adaptiveValue("font-size", 16, 10);
 			line-height: math.div(21, 15);
 
 			@media (any-hover: hover) {
@@ -107,19 +150,20 @@
 }
 
 //====================================================================================================
-
-
 //Burger
-/*
 .icon-menu {
-	display: none;
+	// display: none;
+
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: rem(30);
+		width: rem(26);
 		height: rem(18);
 		cursor: pointer;
 		z-index: 5;
+		right: 0;
+		top: 0;
+
 		span,
 		&::before,
 		&::after {
@@ -129,28 +173,38 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #Ffff;
 		}
+
 		&::before {
 			top: 0;
 		}
+
 		&::after {
 			bottom: 0;
 		}
+
 		span {
 			top: calc(50% - rem(1));
 		}
+
+		.lock & {
+			// padding-right: 10px;
+		}
+
 		.menu-open & {
 			span {
 				width: 0;
 			}
+
 			&::before,
-			&::after {
-			}
+			&::after {}
+
 			&::before {
 				top: calc(50% - rem(1));
 				transform: rotate(-45deg);
 			}
+
 			&::after {
 				bottom: calc(50% - rem(1));
 				transform: rotate(45deg);
@@ -158,4 +212,3 @@
 		}
 	}
 }
-*/

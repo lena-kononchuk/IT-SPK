@@ -1,9 +1,21 @@
 <div id="callback" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
+			<button data-close type="button" class="popup__close"><span></span></button>
+			<div class="popup__text popup-body">
+				<div class="popup-body__form form-popup">
+					<form action="#" class="form-popup__body form-subscribe">
+						<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-required="name"
+							placeholder="Имя" class="form-subscribe__input">
+						<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" data-required="phone"
+							placeholder="Номер телефона" required class="form-subscribe__input">
+						<input autocomplete="off" required type="email" name="form[]" data-error="Ошибка"
+							data-required="email" placeholder="E-mail" class="form-subscribe__input">
+						<textarea type="text" placeholder="Сообщение" class="form-subscribe__input" rows="3"
+							cols="19"></textarea> </textarea>
+						<button type="submit" class="form-subscribe__button _icon-arrowRight">Отправить</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

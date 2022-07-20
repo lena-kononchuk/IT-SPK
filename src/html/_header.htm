@@ -4,7 +4,7 @@
 			<a href="" class="body-header__logo"></a>
 			<div class="body-header__top">
 				<nav class="body-header__menu menu-header">
-					<ul class="menu-header__list">
+					<ul data-da=".menu__body, 768.98" class="menu-header__list">
 						<li class="menu-header__item">
 							<a href="" class="menu-header__link">О нас</a>
 						</li>
@@ -16,7 +16,7 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="body-header__actions phones-header">
+				<div data-da=".menu__body, 768.98,first" class="body-header__actions phones-header">
 					<div class="phones-header__item">
 						<p>Lifecell</p>
 						<a href="tel:380935412092" class="phones-header__link"><span>+380 93 541 20 92</span></a>
@@ -30,7 +30,9 @@
 			<nav hidden class="menu">
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 				<div class="menu__body">
-
+					<button data-da=".menu__body, 768.98,  last" data-popup="#callback" type="button"
+						class="menu__body-button"><span class="_icon-arrowRight"></span> Отправить
+						заявку</button>
 				</div>
 			</nav>
 		</div>

@@ -11,9 +11,11 @@ body::after {
 	pointer-events: none;
 	z-index: 149;
 }
+
 .popup-show body::after {
 	opacity: 1;
 }
+
 .popup {
 	position: fixed;
 	top: 0;
@@ -25,16 +27,19 @@ body::after {
 	visibility: hidden;
 	pointer-events: none;
 }
+
 .popup_show {
 	z-index: 150;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
 }
+
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
 }
+
 .popup__wrapper {
 	display: flex;
 	flex-direction: column;
@@ -46,16 +51,54 @@ body::after {
 	justify-content: center;
 	align-items: center;
 }
+
 .popup__content {
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #eee;
+	background-color: #ffff;
 	padding: 20px;
 	width: 100%;
-	max-width: 900px;
+	max-width: 450px;
 	border-radius: 20px;
+
 	.lock & {
 		visibility: visible;
 	}
+
+	.popup {
+
+		// .popup__content
+		&__content {}
+
+		// .popup__close
+		&__close {}
+
+		// .popup__text
+		&__text {}
+	}
+
+	.popup-body {
+		padding: rem(8) rem(39) rem(40) rem(39);
+
+		@media (max-width:$mobileSmall) {
+			padding: rem(8) 0;
+		}
+
+		// .popup-body__form
+		&__form {}
+	}
+
+	.form-popup {
+
+		// .form-popup__body
+		&__body {}
+	}
+
+	.form-subscribe {
+
+		// .form-subscribe__input
+		&__input {}
+	}
+
 }

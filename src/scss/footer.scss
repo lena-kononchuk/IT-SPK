@@ -1,3 +1,80 @@
 //====================================================================================================
+.footer {
+   background: #06182F;
+
+   // .footer__content
+   &__content {
+      padding: rem(28) rem(0) rem(28) rem(0);
+      font-weight: 400;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width:$mobileSmall) {
+         display: block;
+      }
+   }
+
+   // .footer__action
+   &__action {}
+}
+
+.action-footer {
+
+   // .action-footer__list
+   &__list {}
+
+   // .action-footer__item
+   &__item {}
+
+   // .action-footer__rules
+   &__rules {}
+}
+
+.action-footer {
+   @include adaptiveValue("font-size", 18, 16);
+   line-height: math.div(22, 20);
+
+   // .action-footer__mail
+   &__mail {
+      padding-bottom: rem(16);
+   }
+
+   // .action-footer__phone
+   &__phone {
+      font-weight: 700;
+      padding-bottom: rem(5);
+
+      span {
+         font-weight: 400;
+         font-size: rem(12);
+         line-height: rem(15);
+         padding-left: rem(14);
+      }
+   }
+
+}
+
+.rules-footer {
+   font-weight: 400;
+   max-width: rem(307);
+   text-align: right;
+   @include adaptiveValue("font-size", 18, 16);
+   line-height: math.div(22, 20);
+
+   @media (max-width:$mobileSmall) {
+      text-align: left;
+      padding-top: rem(26);
+   }
+
+   // .rules-footer__text
+   &__text {
+      color: $mainBlueColor;
+      padding-bottom: rem(19);
+   }
+
+   // .rules-footer__copirite
+   &__copirite {}
+}
 
 //====================================================================================================

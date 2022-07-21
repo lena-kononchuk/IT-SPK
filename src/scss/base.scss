@@ -8,28 +8,6 @@
 // Стили спойлеров
 @import "base/spollers";
 
-// Стили табов
-// @import "base/tabs";
-
-// Стили карт
-// @import "base/maps";
-
-// Стили блока "показать еще"
-// @import "base/showmore";
-
-// Стили для липкого блока
-// @import "base/sticky";
-
-// Стили для полноэкранного блока
-// @import "base/fullscreen";
-
-// Стили для поекраної прокрутки
-// Styles for fullpage scroll
-// @import "base/fullpage";
-
-// Стили для отзывчивых картинок (IBG)
-// Сниппет (HTML): ibg (div c картинкой и классами)
-// Сниппет (HTML): ibga (a c картинкой и классами)
 [class*="-ibg"] {
 	position: relative;
 

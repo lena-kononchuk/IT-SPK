@@ -668,13 +668,13 @@ body::after {
 }
 
 .footer {
-  background: #06182F;
+  background: #06182f;
 }
 
 .footer__content {
   padding: 1.75rem 0rem 1.75rem 0rem;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -703,9 +703,23 @@ body::after {
   padding-bottom: 1rem;
 }
 
+.action-footer__mail :hover {
+  color: #00feff;
+  -webkit-transition: color 250ms ease-in 0s;
+  -o-transition: color 250ms ease-in 0s;
+  transition: color 250ms ease-in 0s;
+}
+
 .action-footer__phone {
   font-weight: 700;
   padding-bottom: 0.3125rem;
+}
+
+.action-footer__phone :hover {
+  color: #00feff;
+  -webkit-transition: color 250ms ease-in 0s;
+  -o-transition: color 250ms ease-in 0s;
+  transition: color 250ms ease-in 0s;
 }
 
 .action-footer__phone span {

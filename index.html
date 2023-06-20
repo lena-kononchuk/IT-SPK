@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230516182747">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230620155457">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,20 +18,21 @@
 			<div class="header__container">
 				<div class="header__body body-header">
 					<a href="" class="body-header__logo"></a>
-					<div class="body-header__top">
-						<nav class="body-header__menu menu-header">
-							<ul data-da=".menu__body, 768.98" class="menu-header__list">
+					<div class="body-header__top  modal">
+						<nav class="body-header__menu menu-header ">
+							<ul data-da=".menu__body, 768.98" class="menu-header__list ">
 								<li class="menu-header__item">
-									<a href="" class="menu-header__link">О нас</a>
+									<a href="#about" class="menu-header__link" ">О нас</a>
+						</li>
+						<li class=" menu-header__item">
+										<a href="#services" class="menu-header__link">Услуги</a>
 								</li>
 								<li class="menu-header__item">
-									<a href="" class="menu-header__link">Услуги</a>
-								</li>
-								<li class="menu-header__item">
-									<a href="" class="menu-header__link">Цены</a>
+									<a href="#price" class="menu-header__link">Цены</a>
 								</li>
 							</ul>
 						</nav>
+
 						<div data-da=".menu__body, 768.98,first" class="body-header__actions phones-header">
 							<div class="phones-header__item">
 								<p>Lifecell</p>
@@ -44,7 +45,7 @@
 						</div>
 					</div>
 					<nav hidden class="menu">
-						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<button type="button" class="menu__icon icon-menu burger-menu open" id="openModal"><span></span></button>
 						<div class="menu__body">
 							<button data-da=".menu__body, 768.98,  last" data-popup="#callback" type="button" class="menu__body-button"><span class="_icon-arrowRight"></span> Отправить
 								заявку</button>
@@ -69,7 +70,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__block-about about-block">
+			<section class="page__block-about about-block" id="about">
 				<div class="about-block__container">
 					<div class="about-block__content">
 						<h2 class="about-block__title title">О нас </h2>
@@ -80,7 +81,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__block-services services-block">
+			<section class="page__block-services services-block" id="services">
 				<div class="services-block__container">
 					<div class="services-block__content">
 						<h2 class="services-block__title title">Услуги</h2>
@@ -166,7 +167,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__block-price price">
+			<section class="page__block-price price" id="price">
 				<div class="price__container">
 					<div class="price__content">
 						<div class="price__title title">Цены</div>
@@ -259,8 +260,9 @@
 										<div class="spollers__title"> Услуги обслуживания
 											компьютеров и серверов в Киеве это не только установить Windows и кинуть
 											провод, это большой и сложный комплекс услуг:</div>
-										<button type="button" data-spoller class="spollers__button _icon-done">Наши
-											услуги</button>
+										<span class="open">Наши услуги:</span>
+										<button type="button" data-spoller class="spollers__button">
+										</button>
 										<div class="spollers__body">
 											<ul class="main-block__menu">
 												<li class="main-block__list">Установка, настройка и сопровождение ПО;</li>
@@ -312,6 +314,7 @@
 					</div>
 				</div>
 			</section>
+
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -336,7 +339,9 @@
 	<div id="callback" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close"><span></span></button>
+				<button data-close type="button" class="popup__close">
+					<span>&times;</span>
+				</button>
 				<div class="popup__text popup-body">
 					<div class="popup-body__form form-popup">
 						<form action="#" class="form-popup__body form-subscribe">
@@ -351,7 +356,9 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230516182747"></script>
+	<script src="js/app.min.js?_v=20230620155457"></script>
+
+
 </body>
 
 </html>

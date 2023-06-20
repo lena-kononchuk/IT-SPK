@@ -1106,6 +1106,27 @@
     };
     const da = new DynamicAdapt("max");
     da.init();
+    const openModal = () => {
+        const modal = document.querySelector(".menu__body");
+        modal.style.display = "block";
+        console.log("openModal exp");
+    };
+    const closeModal = () => {
+        const modal = document.querySelector(".menu__body");
+        modal.style.display = "none";
+        console.log("closeModal exp");
+    };
+    const scrollToSection = e => {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute("href"));
+        window.scrollTo({
+            top: target.offsetTop,
+            behavior: "smooth"
+        });
+    };
+    function modal_menuClose() {
+        document.documentElement.classList.remove("menu-open");
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
@@ -1114,4 +1135,34 @@
         viewPass: false,
         autoHeight: false
     });
+    let isMenuOpen = false;
+    document.getElementById("openModal").addEventListener("click", (e => {
+        console.log("openModal clicked");
+        if (!isMenuOpen) {
+            openModal();
+            isMenuOpen = true;
+        } else CloseMenu();
+        console.log("openModal processed" + isMenuOpen);
+    }));
+    document.getElementById("openModal").addEventListener("click", (e => {
+        openModal();
+        isMenuOpen = true;
+        console.log("openModal " + isMenuOpen);
+    }));
+    document.querySelectorAll(".menu__body a").forEach((link => {
+        link.addEventListener("click", scrollToSection);
+    }));
+    document.querySelectorAll(".menu__body a").forEach((link => {
+        link.addEventListener("click", (e => {
+            console.log("before goTO: " + isMenuOpen);
+            scrollToSection(e);
+            CloseMenu();
+            console.log("after goTO: " + isMenuOpen);
+            modal_menuClose();
+        }));
+    }));
+    function CloseMenu() {
+        closeModal();
+        isMenuOpen = false;
+    }
 })();

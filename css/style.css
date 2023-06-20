@@ -146,8 +146,13 @@ h6 {
   font-size: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-weight: 500;
+  scroll-behavior: smooth;
 }
 
 .lock body {
@@ -380,12 +385,92 @@ body::after {
   visibility: visible;
 }
 
+.popup__content .popup {
+  position: relative;
+}
+
+.popup__content .popup__close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.popup__content .popup__close span {
+  position: absolute;
+  top: 30px;
+  right: 8px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 38px;
+  color: rgb(228, 119, 119);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.popup__content .popup__close:hover span {
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+      -ms-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+}
+
+.popup__content .popup__close:hover {
+  color: rgb(16, 241, 241);
+}
+
 .popup__content .popup-body {
   padding: 0.5rem 2.4375rem 2.5rem 2.4375rem;
 }
 
+.spollers {
+  position: relative;
+}
+
+.spollers .open {
+  font-weight: 700;
+  color: #000;
+  display: none;
+}
+
 .spollers__button {
   display: none;
+}
+
+.spollers__item p {
+  font-weight: 600;
+  color: #000;
+}
+
+@supports (font-size: clamp( 0.75rem , 0.7249058971rem  +  0.1254705144vw , 0.8125rem )) {
+  .spollers__item p {
+    font-size: clamp( 0.75rem , 0.7249058971rem  +  0.1254705144vw , 0.8125rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.7249058971rem  +  0.1254705144vw , 0.8125rem )) {
+  .spollers__item p {
+    font-size: calc(0.75rem + 0.0625 * (100vw - 20rem) / 49.8125);
+  }
+}
+
+@supports (line-height: clamp( 0.875rem , 0.7244353827rem  +  0.7528230866vw , 1.25rem )) {
+  .spollers__item p {
+    line-height: clamp( 0.875rem , 0.7244353827rem  +  0.7528230866vw , 1.25rem );
+  }
+}
+
+@supports not (line-height: clamp( 0.875rem , 0.7244353827rem  +  0.7528230866vw , 1.25rem )) {
+  .spollers__item p {
+    line-height: calc(0.875rem + 0.375 * (100vw - 20rem) / 49.8125);
+  }
 }
 
 .spollers__title {
@@ -418,39 +503,6 @@ body::after {
 
 ._spoller-init .spollers__title {
   cursor: pointer;
-  /*
-  ._spoller-init & {
-  	position: relative;
-  	width: 100%;
-  	text-align: left;
-  	&::before,
-  	&::after {
-  		content: "";
-  		position: absolute;
-  		right: 0;
-  		top: rem(12);
-  		height: rem(1);
-  		transition: all 0.3s ease 0s;
-  		width: rem(10);
-  		background-color: #000;
-  	}
-  	&::before {
-  		transform: rotate(40deg);
-  		right: rem(7);
-  	}
-  	&::after {
-  		transform: rotate(-40deg);
-  	}
-  }
-  &._spoller-active {
-  	&::before {
-  		transform: rotate(-40deg);
-  	}
-  	&::after {
-  		transform: rotate(40deg);
-  	}
-  }
-  */
 }
 
 ._spoller-init .spollers__title::before,
@@ -514,7 +566,7 @@ body::after {
 
 .title {
   font-weight: 700;
-  color: #001E42;
+  color: #001e42;
 }
 
 @supports (font-size: clamp( 2.125rem , 1.7234943538rem  +  2.0075282309vw , 3.125rem )) {
@@ -1846,27 +1898,27 @@ body::after {
   max-width: 23.375rem;
 }
 
-@supports (font-size: clamp( 1.25rem , 0.8484943538rem  +  2.0075282309vw , 2.25rem )) {
+@supports (font-size: clamp( 1.125rem , 0.6733061481rem  +  2.2584692597vw , 2.25rem )) {
   .info-content__title {
-    font-size: clamp( 1.25rem , 0.8484943538rem  +  2.0075282309vw , 2.25rem );
+    font-size: clamp( 1.125rem , 0.6733061481rem  +  2.2584692597vw , 2.25rem );
   }
 }
 
-@supports not (font-size: clamp( 1.25rem , 0.8484943538rem  +  2.0075282309vw , 2.25rem )) {
+@supports not (font-size: clamp( 1.125rem , 0.6733061481rem  +  2.2584692597vw , 2.25rem )) {
   .info-content__title {
-    font-size: calc(1.25rem + 1 * (100vw - 20rem) / 49.8125);
+    font-size: calc(1.125rem + 1.125 * (100vw - 20rem) / 49.8125);
   }
 }
 
-@supports (padding-top: clamp( 0.9375rem , 0.1093946048rem  +  4.1405269762vw , 3rem )) {
+@supports (padding-top: clamp( 0.0000000625rem , -1.2045168509rem  +  6.0225845671vw , 3rem )) {
   .info-content__title {
-    padding-top: clamp( 0.9375rem , 0.1093946048rem  +  4.1405269762vw , 3rem );
+    padding-top: clamp( 0.0000000625rem , -1.2045168509rem  +  6.0225845671vw , 3rem );
   }
 }
 
-@supports not (padding-top: clamp( 0.9375rem , 0.1093946048rem  +  4.1405269762vw , 3rem )) {
+@supports not (padding-top: clamp( 0.0000000625rem , -1.2045168509rem  +  6.0225845671vw , 3rem )) {
   .info-content__title {
-    padding-top: calc(0.9375rem + 2.0625 * (100vw - 20rem) / 49.8125);
+    padding-top: calc(0.0000000625rem + 2.9999999375 * (100vw - 20rem) / 49.8125);
   }
 }
 
@@ -2029,22 +2081,37 @@ body::after {
 }
 
 @media (max-width: 48.06125em) {
+  .spollers .open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .spollers__button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 100%;
-    gap: 1.875rem;
-    padding-right: 0.625rem;
+    position: absolute;
+    right: 0;
+    top: 6px;
     color: #002047;
     cursor: pointer;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+
+  .spollers__button._spoller-active {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 
   .spollers__item {
@@ -2094,6 +2161,9 @@ body::after {
 
   .body-header__top {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   .body-header__logo {

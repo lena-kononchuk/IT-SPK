@@ -6,6 +6,7 @@
 	"private": true,
 	"license": "",
 	"type": "module",
+	"homepage":"https://hakunamatata91.github.io/IT-SPK/",
 	"scripts": {
 		"start": "npm i --legacy-peer-deps",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
@@ -16,7 +17,8 @@
 		"zip": "gulp deployZIP --build",
 		"devbuild": "gulp build --build --nowebp",
 		"tmp": "gulp -f gulpfile.tmp.js",
-		"bem": "fls-bemtree-from-html"
+		"bem": "fls-bemtree-from-html",
+		"predeploy": "gh-pages -d dist"
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "latest",
@@ -72,6 +74,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"gh-pages": "^4.0.0",
 		"simplebar": "latest"
 	}
 }

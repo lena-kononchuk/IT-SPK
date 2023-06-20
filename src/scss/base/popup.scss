@@ -67,38 +67,68 @@ body::after {
 	}
 
 	.popup {
-
+		position: relative;
 		// .popup__content
-		&__content {}
+		&__content {
+		}
 
 		// .popup__close
-		&__close {}
+		&__close {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+
+			overflow: hidden;
+			outline: none;
+		}
+
+		&__close span {
+			position: absolute;
+			top: 30px;
+			right: 8px;
+			transform: translate(-50%, -50%);
+			font-size: 38px;
+			color: rgb(228, 119, 119);
+			transition: transform 0.3s ease;
+		}
+
+		&__close:hover span {
+			transform: translate(-50%, -50%) scale(1.2);
+		}
+
+		&__close:hover {
+			color: rgb(16, 241, 241);
+		}
 
 		// .popup__text
-		&__text {}
+		&__text {
+		}
 	}
 
 	.popup-body {
 		padding: rem(8) rem(39) rem(40) rem(39);
 
-		@media (max-width:$mobileSmall) {
+		@media (max-width: $mobileSmall) {
 			padding: rem(8) 0;
 		}
 
 		// .popup-body__form
-		&__form {}
+		&__form {
+		}
 	}
 
 	.form-popup {
-
 		// .form-popup__body
-		&__body {}
+		&__body {
+		}
 	}
 
 	.form-subscribe {
-
 		// .form-subscribe__input
-		&__input {}
+		&__input {
+		}
 	}
-
 }

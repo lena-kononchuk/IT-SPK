@@ -1,34 +1,37 @@
 //====================================================================================================
 .footer {
-   background: #06182F;
+   background: #06182f;
 
    // .footer__content
    &__content {
       padding: rem(28) rem(0) rem(28) rem(0);
       font-weight: 400;
-      color: #FFFFFF;
+      color: #ffffff;
       display: flex;
       justify-content: space-between;
 
-      @media (max-width:$mobileSmall) {
+      @media (max-width: $mobileSmall) {
          display: block;
       }
    }
 
    // .footer__action
-   &__action {}
+   &__action {
+   }
 }
 
 .action-footer {
-
    // .action-footer__list
-   &__list {}
+   &__list {
+   }
 
    // .action-footer__item
-   &__item {}
+   &__item {
+   }
 
    // .action-footer__rules
-   &__rules {}
+   &__rules {
+   }
 }
 
 .action-footer {
@@ -38,12 +41,20 @@
    // .action-footer__mail
    &__mail {
       padding-bottom: rem(16);
+      :hover {
+         color: $mainBlueColor;
+         transition: color 250ms ease-in 0s;
+      }
    }
 
    // .action-footer__phone
    &__phone {
       font-weight: 700;
       padding-bottom: rem(5);
+      :hover {
+         color: $mainBlueColor;
+         transition: color 250ms ease-in 0s;
+      }
 
       span {
          font-weight: 400;
@@ -52,7 +63,6 @@
          padding-left: rem(14);
       }
    }
-
 }
 
 .rules-footer {
@@ -62,7 +72,7 @@
    @include adaptiveValue("font-size", 18, 16);
    line-height: math.div(22, 20);
 
-   @media (max-width:$mobileSmall) {
+   @media (max-width: $mobileSmall) {
       text-align: left;
       padding-top: rem(26);
    }
@@ -74,7 +84,8 @@
    }
 
    // .rules-footer__copirite
-   &__copirite {}
+   &__copirite {
+   }
 }
 
 //====================================================================================================

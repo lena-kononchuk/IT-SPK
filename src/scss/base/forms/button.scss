@@ -2,18 +2,32 @@
 // Снипет (HTML): btn
 
 .button {
-	padding: rem(14) rem(52) rem(14) rem(22);
+	padding: rem(14) rem(52);
 	background: $mainBlueColor;
 	font-size: rem(14);
 	line-height: math.div(17, 13);
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
-	color: #002047;
+	color: #333;
 	position: relative;
 	display: flex;
-	flex-direction: row-reverse;
+	// flex-direction: row-reverse;
 	transition: box-shadow 0.3s ease 0s;
-
+	animation: glow 1300ms infinite;
+	@keyframes glow {
+		0% {
+			background: $mainBlueColor;
+			box-shadow: 0 0 5px #0091b2;
+		}
+		50% {
+			background: $mainBlueColor;
+			box-shadow: 0 0 25px #21c7ed;
+		}
+		100% {
+			background: $mainBlueColor;
+			box-shadow: 0 0 5px #0091b2;
+		}
+	}
 
 	span {
 		position: absolute;
@@ -27,8 +41,12 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			// text-decoration: underline;
-			box-shadow: 0px 4px 25px rgba(0, 254, 255, 1);
+			box-shadow: 0px 4px 25px rgb(16, 241, 241);
+			animation: none;
+			color: #333;
 		}
+	}
+	@media (max-width: 320px) {
+		width: 100%;
 	}
 }

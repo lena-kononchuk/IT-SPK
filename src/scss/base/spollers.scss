@@ -1,29 +1,50 @@
 // Блок со спойлерами
 .spollers {
-
+	position: relative;
+	.open {
+		font-weight: 700;
+		color: #000;
+		display: none;
+		@media (max-width: $mobile) {
+			display: flex;
+		}
+	}
 	// .spollers__button
 	&__button {
 		display: none;
 
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			display: flex;
-			flex-direction: row-reverse;
-			justify-content: space-between;
-			width: 100%;
-			gap: rem(30);
-			padding-right: rem(10);
+			position: absolute;
+			right: 0;
+			top: 6px;
 			color: #002047;
-		}
+			cursor: pointer;
 
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 5px solid black;
+			transition: transform 0.3s ease;
+			&._spoller-active {
+				transform: rotate(180deg);
+			}
+		}
 	}
 }
 
 // Спойлер
 .spollers__item {
-
-	@media (max-width:$mobile) {
+	@media (max-width: $mobile) {
 		margin-top: rem(13);
 		font-weight: 400;
+		@include adaptiveValue("font-size", 13, 12);
+		@include adaptiveValue("line-height", 20, 14);
+	}
+	p {
+		font-weight: 600;
+		color: #000;
 		@include adaptiveValue("font-size", 13, 12);
 		@include adaptiveValue("line-height", 20, 14);
 	}
@@ -35,18 +56,9 @@
 	@include adaptiveValue("font-size", 13, 12);
 	@include adaptiveValue("line-height", 20, 14);
 
-	@media (max-width:$mobile) {
+	@media (max-width: $mobile) {
 		display: none;
 	}
-
-
-	// width: 100%;
-	// cursor: default;
-	// text-align: left;
-	// border: 1px solid #eee;
-	// padding: rem(10) rem(15);
-	// border-radius: rem(5);
-	// position: relative;
 
 	._spoller-init & {
 		cursor: pointer;
@@ -80,46 +92,5 @@
 				transform: rotate(40deg);
 			}
 		}
-
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: rem(12);
-				height: rem(1);
-				transition: all 0.3s ease 0s;
-				width: rem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: rem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
 	}
-}
-
-// Контент спойлера
-.spollers__body {
-	// padding: rem(20);
-	// border-radius: rem(5);
-	// border: 1px solid #eee;
 }

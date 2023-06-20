@@ -1,13 +1,13 @@
 //====================================================================================================
 //main block
 .main {
-   background: url('@img/bg/mainBG.jpg') center / cover no-repeat;
+   background: url("@img/bg/mainBG.jpg") center / cover no-repeat;
 
    &__container {
       display: flex;
       justify-content: space-between;
 
-      @media (max-width:$mobile) {
+      @media (max-width: $mobile) {
          display: grid;
       }
    }
@@ -19,7 +19,7 @@
       color: $mainBlueColor;
       max-width: rem(568);
 
-      @media (max-width:$mobileSmall) {
+      @media (max-width: $mobileSmall) {
          max-width: rem(333);
       }
    }
@@ -38,7 +38,7 @@
       @include adaptiveValue("font-size", 18, 16);
       line-height: math.div(19, 14);
 
-      @media (max-width:$mobileSmall) {
+      @media (max-width: $mobileSmall) {
          max-width: rem(222);
       }
    }
@@ -46,7 +46,7 @@
    // .main__price
    &__price {
       @include adaptiveValue("font-size", 24, 16);
-      color: #FFFFFF;
+      color: #ffffff;
 
       span {
          font-weight: 700;
@@ -59,7 +59,7 @@
    // .main__text
    &__text {
       @include adaptiveValue("font-size", 24, 16);
-      color: #FFFFFF;
+      color: #ffffff;
    }
 
    // .main__button
@@ -76,11 +76,11 @@
       line-height: math.div(20, 14);
       font-size: 14px;
       line-height: 140%;
-      color: #FFFFFF;
+      color: #ffffff;
       text-align: right;
       @include adaptiveValue("padding-bottom", 70, 40);
 
-      @media (max-width:$mobile) {
+      @media (max-width: $mobile) {
          text-align: start;
       }
    }
@@ -97,7 +97,7 @@
       display: flex;
       justify-content: space-between;
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
          display: block;
       }
    }
@@ -106,7 +106,6 @@
 
    &__title {
       justify-content: flex-start;
-
    }
 
    // .about-block__text
@@ -114,11 +113,11 @@
    &__text {
       max-width: rem(810);
       padding-left: rem(70);
-      @include adaptiveValue("font-size", 18, 16);
+      @include adaptiveValue("font-size", 18, 14);
       line-height: math.div(25, 14);
-      color: #252D37;
+      color: #252d37;
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
          padding: rem(20) 0 0 0;
       }
    }
@@ -132,7 +131,8 @@
    @include adaptiveValue("padding-bottom", 22, 10);
 
    // .services-block__content
-   &__content {}
+   &__content {
+   }
 
    // .services-block__title
    &__title {
@@ -140,7 +140,8 @@
    }
 
    // .services-block__body-items
-   &__body-items {}
+   &__body-items {
+   }
 }
 
 .items-body {
@@ -151,13 +152,13 @@
    justify-content: space-between;
    align-items: flex-start;
 
-   @media (max-width:$tablet) {
+   @media (max-width: $tablet) {
       // row-gap: rem(30);
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
    }
 
-   @media (max-width:$mobile) {
+   @media (max-width: $mobile) {
       grid-template-columns: repeat(1, 1fr);
       justify-items: start;
    }
@@ -168,10 +169,9 @@
       max-width: rem(290);
       align-items: flex-start;
 
-      @media (max-width:$mobile) {
+      @media (max-width: $mobile) {
          max-width: 100%;
       }
-
    }
 
    // .items-body__icon
@@ -180,7 +180,7 @@
       z-index: 9;
 
       &::after {
-         content: '';
+         content: "";
          position: absolute;
          width: rem(63);
          height: rem(53);
@@ -194,23 +194,22 @@
 
    // .items-body__text
    &__text {
-      @include adaptiveValue("padding-left", 35, 33);
+      @include adaptiveValue("padding-left", 35, 20);
       font-weight: 700;
-      @include adaptiveValue("padding-top", 14, 28);
-      @include adaptiveValue("font-size", 18, 16);
+      @include adaptiveValue("padding-top", 14, 20);
+      @include adaptiveValue("font-size", 18, 14);
       line-height: math.div(23, 20);
-      color: #001E42;
+      color: #001e42;
 
-      @media (max-width:$mobile) {
-         width: 100%;
-      }
+      // @media (max-width: $mobile) {
+      //    width: 100%;
+      // }
    }
 }
 
 //========================================================================================================================================================
 //order block
 .order-block {
-
    // .order-block__content
    &__content {
       @include adaptiveValue("padding-top", 48, 33);
@@ -219,10 +218,9 @@
 }
 
 .content-block {
-
    // .content-block__text
    &__text {
-      @include adaptiveValue("font-size", 24, 22);
+      @include adaptiveValue("font-size", 24, 18);
       line-height: math.div(29, 27);
       font-weight: 700;
       @include adaptiveValue("padding-bottom", 69, 50);
@@ -240,13 +238,12 @@
 }
 
 .text-block {
-
    // .text-block__title
    &__title {
       font-weight: 700;
-      @include adaptiveValue("font-size", 24, 20);
+      @include adaptiveValue("font-size", 24, 18);
       line-height: math.div(29, 27);
-      color: #001E42;
+      color: #001e42;
       padding-bottom: rem(31);
    }
 
@@ -256,21 +253,21 @@
       grid-template-columns: repeat(2, auto);
       @include adaptiveValue("padding-bottom", 42, 34);
 
-      @media (max-width:$mobile) {
+      @media (max-width: $mobile) {
          grid-template-columns: repeat(1, auto);
       }
 
       p {
          font-weight: 400;
-         @include adaptiveValue("font-size", 18, 16);
+         @include adaptiveValue("font-size", 18, 14);
          line-height: math.div(25, 20);
-         color: #252D37;
+         color: #252d37;
 
          &:not(:last-child) {
             padding-right: rem(30);
          }
 
-         @media (max-width:$tablet) {
+         @media (max-width: $tablet) {
             &:not(:last-child) {
                padding-bottom: rem(20);
             }
@@ -284,9 +281,9 @@
    grid-template-columns: repeat(2, auto);
    @include adaptiveValue("gap", 80, 20);
    font-weight: 700;
-   color: #001E42;
+   color: #001e42;
 
-   @media (max-width:$mobile) {
+   @media (max-width: $mobile) {
       grid-template-columns: repeat(1, auto);
       width: 100%;
    }
@@ -297,11 +294,11 @@
       grid-template-columns: repeat(2, auto);
       @include adaptiveValue("margin-left", 86, 10);
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
          margin-left: 0;
       }
 
-      @media (max-width:$mobile) {
+      @media (max-width: $mobile) {
          display: flex;
       }
    }
@@ -314,18 +311,17 @@
       max-width: rem(174);
       padding-top: rem(30);
       padding-left: rem(10);
-
    }
 
    // .images-block__text
    &__text {
       align-self: center;
       max-width: rem(521);
-      @include adaptiveValue("font-size", 24, 20);
+      @include adaptiveValue("font-size", 24, 16);
       line-height: math.div(28, 20);
       padding-top: rem(30);
 
-      @media (max-width:$mobile) {
+      @media (max-width: $mobile) {
          width: 100%;
          padding-left: rem(0);
       }
@@ -339,17 +335,16 @@
    font-weight: 700;
    font-size: rem(18);
    line-height: rem(22);
-   color: #001E42;
+   color: #001e42;
    padding-left: rem(10);
 
-   @media (max-width:$tablet) {
+   @media (max-width: $tablet) {
       grid-template-columns: repeat(2, auto);
    }
 
-   @media (max-width:$mobile) {
+   @media (max-width: $mobile) {
       grid-template-columns: repeat(1, auto);
    }
-
 
    &__item {
       position: relative;
@@ -366,16 +361,20 @@
          letter-spacing: 0.05em;
          text-transform: uppercase;
          color: $mainBlueColor;
+         @media (max-width: 320px) {
+            font-size: 70px;
+         }
+      }
+      @media (max-width: 320px) {
+         font-size: 16px;
       }
    }
-
 }
 
 //========================================================================================================================================================
 //price block
 
 .price {
-
    // .price__content
    &__content {
       @include adaptiveValue("padding-top", 50, 27);
@@ -391,12 +390,13 @@
       display: flex;
       justify-content: space-between;
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
          flex-direction: column;
       }
 
       // .body-price__text
-      &__text {}
+      &__text {
+      }
    }
 
    .text-price {
@@ -405,16 +405,15 @@
       max-width: 50%;
       padding-right: rem(30);
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
          max-width: 100%;
          padding-right: rem(0);
          padding-bottom: rem(19);
       }
 
-
       &__text {
          line-height: math.div(25, 22);
-         color: #252D37;
+         color: #252d37;
          font-weight: 400;
          @include adaptiveValue("font-size", 18, 16);
 
@@ -431,26 +430,24 @@
       &__plan {
          display: flex;
 
-         @media (max-width:$tablet) {
+         @media (max-width: $tablet) {
             justify-content: center;
             align-items: center;
          }
 
-         @media (max-width:$mobileSmall) {
+         @media (max-width: $mobileSmall) {
             justify-content: space-between;
          }
-
       }
    }
 
    .billing-plan {
-
       // .billing-plan__button
       &__button {
          display: flex;
          flex-direction: row-reverse;
          padding: rem(15) rem(20);
-         border: 2px solid #001E42;
+         border: 2px solid #001e42;
          font-weight: 700;
          font-size: rem(14);
          line-height: rem(17);
@@ -458,7 +455,7 @@
          text-transform: uppercase;
          transition: background 0.3s ease 0s;
 
-         @media (max-width:$mobileSmall) {
+         @media (max-width: $mobileSmall) {
             font-size: rem(11);
             padding: rem(10) rem(10);
          }
@@ -466,14 +463,14 @@
          &:not(:last-child) {
             margin-right: em(24, 10);
 
-            @media (max-width:$mobileSmall) {
+            @media (max-width: $mobileSmall) {
                margin-right: 0;
             }
          }
 
          @media (any-hover: hover) {
             &:hover {
-               background: #F2F2F2;
+               background: #f2f2f2;
                cursor: pointer;
             }
          }
@@ -482,10 +479,10 @@
       ._icon-arrowdown {
          &::before {
             font-size: 18px;
-            color: #001E42;
+            color: #001e42;
             @include adaptiveValue("padding-left", 10, 5);
 
-            @media (max-width:$mobileSmall) {
+            @media (max-width: $mobileSmall) {
                font-size: 14px;
             }
          }
@@ -494,40 +491,59 @@
 
    .card-billing {
       display: flex;
+      cursor: pointer;
+      :hover {
+         // box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+      }
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
          padding-bottom: rem(35);
       }
 
-      @media (max-width:$mobileSmall) {
+      @media (max-width: $mobileSmall) {
          display: block;
          margin-right: rem(0);
       }
 
       // .card-billing__card
-      &__card {}
+      &__card {
+         box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+         animation: glowing 1300ms infinite;
+         @keyframes glowing {
+            0% {
+               // background: $mainBlueColor;
+               box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+               // background: $mainBlueColor;
+               box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            }
+            100% {
+               // background: $mainBlueColor;
+               box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+         }
+      }
    }
 
    .card {
       flex: 1 1 rem(259);
       font-weight: 400;
-      color: #001E42;
+      color: #001e42;
       font-size: rem(18);
       line-height: rem(25);
-      border: 2px solid #001E42;
-      padding: rem(38) rem(19) rem(38)rem(19);
+      border: 2px solid #001e42;
+      padding: rem(38) rem(19) rem(38) rem(19);
       text-align: center;
 
       &:not(:last-child) {
          margin-right: rem(12);
 
-         @media (max-width:$mobileSmall) {
+         @media (max-width: $mobileSmall) {
             margin-right: rem(0);
             margin-bottom: rem(16);
          }
       }
-
-
 
       // .card__title
       &__title {
@@ -560,7 +576,8 @@
       }
 
       // .card__footer
-      &__footer {}
+      &__footer {
+      }
    }
 }
 
@@ -574,8 +591,7 @@
 
    // .clients-block__content
    &__content {
-      @media (max-width:$mobileSmall) {
-
+      @media (max-width: $mobileSmall) {
          padding-bottom: 55px;
       }
    }
@@ -588,19 +604,19 @@
    // .clients-block__body
    &__body {
       display: grid;
-      gap: rem(16);
+      gap: rem(80);
       height: 110px;
-
 
       align-content: space-between;
       grid-template-columns: repeat(5, auto);
 
-      @media (max-width:$mobile) {
-         grid-template-columns: repeat(4, auto);
-         gap: rem(10);
+      @media (max-width: $mobile) {
+         grid-template-columns: repeat(5, auto);
+         gap: rem(5);
+         // height: 80px;
       }
 
-      @media (max-width:$mobileSmall) {
+      @media (max-width: $mobileSmall) {
          grid-template-columns: repeat(2, auto);
          gap: rem(10);
       }
@@ -609,17 +625,19 @@
    // .clients-block__slider
 
    // .clients-block__wrapper
-   &__wrapper {}
+   &__wrapper {
+   }
 
    // .clients-block__slide
    &__slide {
       align-self: center;
+      cursor: pointer;
 
       &:not(:last-child) {
          margin-right: em(16, 20);
          margin-bottom: rem(10);
 
-         @media (max-width:$mobileSmall) {
+         @media (max-width: $mobileSmall) {
             margin: 0;
          }
       }
@@ -634,7 +652,7 @@
 
    // .alliance-block__content
    &__content {
-      color: #A5AAAF;
+      color: #a5aaaf;
    }
 
    // .alliance-block__title
@@ -646,7 +664,8 @@
    }
 
    // .alliance-block__main
-   &__main {}
+   &__main {
+   }
 }
 
 .main-block {
@@ -654,7 +673,7 @@
    grid-template-columns: repeat(2, auto);
    gap: rem(30);
 
-   @media (max-width:$mobile) {
+   @media (max-width: $mobile) {
       display: block;
    }
 
@@ -678,10 +697,8 @@
 
    // .main-block__list
    &__list {
-
-
       &::before {
-         content: '-';
+         content: "-";
          padding-right: rem(5);
       }
 
@@ -694,7 +711,7 @@
 //========================================================================================================================================================
 // .page__form
 .form-item {
-   background: url('@img/bg/footerBG.jpg') center / cover no-repeat;
+   background: url("@img/bg/footerBG.jpg") center / cover no-repeat;
 
    // .form-item__content-info
    &__content-info {
@@ -703,31 +720,43 @@
       @include adaptiveValue("padding-top", 50, 63);
       @include adaptiveValue("padding-bottom", 35, 28);
 
-      @media (max-width:$mobile) {
+      @media (max-width: 320px) {
          display: block;
       }
    }
 }
 
 .info-content {
-
    // .info-content__title
    &__title {
       font-weight: 700;
-      @include adaptiveValue("font-size", 36, 30);
-      line-height: math.div(36, 40);
-      color: #FFFFFF;
+      @include adaptiveValue("font-size", 36, 18);
+      line-height: math.div(46, 30);
+      color: #ffffff;
       max-width: rem(374);
-      @include adaptiveValue("padding-top", 48, 30);
-
-      @media (max-width:$mobile) {
-         max-width: 100%;
-         padding-bottom: rem(39);
+      @include adaptiveValue("padding-top", 48, 0);
+      @media (max-width: 640px) {
+         // text-align: center;
+         // max-width: 100%;
+         // padding-bottom: 20px;
+         max-width: rem(300);
+      }
+      @media (max-width: 320px) {
+         padding-bottom: 20px;
       }
    }
 
    // .info-content__form
-   &__form {}
+   &__form {
+      @media (max-width: 640px) {
+         // max-width: 100%;
+         // margin: 0 auto;
+      }
+   }
+   @media (max-width: 640px) {
+      // display: flex;
+      // flex-direction: column;
+   }
 }
 
 .form-content {
@@ -735,7 +764,8 @@
    flex-direction: column;
 
    // .form-content__body
-   &__body {}
+   &__body {
+   }
 }
 
 .form-subscribe {
@@ -743,12 +773,13 @@
 
    // .form-subscribe__input
    &__input {
+      cursor: pointer;
       font-style: normal;
       font-weight: 400;
       font-size: rem(18);
       line-height: rem(25);
       padding: rem(10) rem(20);
-      background: #ECECEC;
+      background: #ececec;
       width: 100%;
       outline: none;
       resize: none;
@@ -758,9 +789,6 @@
       }
    }
 
-
-
-   // .form-subscribe__button
    &__button {
       width: 100%;
       background-color: $mainBlueColor;
@@ -775,7 +803,7 @@
       align-items: center;
       justify-content: center;
       padding: rem(14) 0;
-      transition: box-shadow 0.3s ease 0s;
+      transition: box-shadow 250ms ease 0s;
 
       @media (any-hover: hover) {
          &:hover {
@@ -787,11 +815,10 @@
    ._icon-arrowRight {
       &::before {
          padding-left: rem(30);
-
       }
    }
 
-   @media (max-width:$mobile) {
+   @media (max-width: $mobile) {
       min-width: 100%;
    }
 }

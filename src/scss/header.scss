@@ -15,7 +15,6 @@
 			flex: 1 1 auto;
 			display: flex;
 			justify-content: space-between;
-
 		}
 	}
 }
@@ -29,12 +28,15 @@
 	// .body-header__top
 	&__top {
 		// padding: rem(37) 0 rem(13) 0;
-		align-items: center;
+		// align-items: center;
 		flex: 1 1 auto;
 		display: flex;
 
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
 		}
 	}
 
@@ -52,7 +54,7 @@
 		}
 
 		&::after {
-			content: 'UA';
+			content: "UA";
 			position: absolute;
 			top: 0;
 			left: rem(110);
@@ -64,18 +66,18 @@
 			border-radius: 50%;
 			padding: rem(3);
 
-			@media (max-width:$mobile) {
+			@media (max-width: $mobile) {
 				display: none;
 			}
-
 		}
 	}
 
 	// .body-header__actions
-	&__actions {}
+	&__actions {
+	}
 
 	.menu {
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			&__body-button {
 				font-weight: 700;
 				font-size: rem(14);
@@ -105,7 +107,6 @@
 
 		// .menu__body
 		&__body {
-
 			@media (max-width: $mobile) {
 				position: fixed;
 				width: 100%;
@@ -118,8 +119,6 @@
 				transition: left 0.3s ease 0s;
 				z-index: 4;
 
-
-
 				&::before {
 					content: "";
 					position: fixed;
@@ -129,7 +128,6 @@
 					top: 0;
 					background-color: #ffff;
 				}
-
 
 				.menu-open & {
 					left: 0;
@@ -154,11 +152,10 @@
 	flex: 1 1 auto;
 	justify-content: center;
 
-	@media (max-width:$tablet) {
+	@media (max-width: $tablet) {
 		flex-direction: column;
 		row-gap: 25px;
 	}
-
 
 	// .menu-header__list
 	&__list {
@@ -166,7 +163,7 @@
 		@include adaptiveValue("gap", 37, 20);
 		justify-content: center;
 
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -180,37 +177,37 @@
 	}
 
 	// .menu-header__item
-	&__item {}
+	&__item {
+	}
 
 	// .menu-header__link
 	&__link {
 		font-weight: 400;
 		@include adaptiveValue("font-size", 18, 16);
 		line-height: math.div(22, 18);
-		color: #FFFFFF;
-		transition: all 0.6s ease 0s;
+		color: #ffffff;
+		transition: all 250ms ease 0s;
 
 		@media (any-hover: hover) {
 			&:hover {
-				text-decoration: underline;
+				text-decoration: none;
+				color: #00feff;
 			}
 		}
 
-		@media (max-width:$mobile) {
-			color: #001E42;
+		@media (max-width: $mobile) {
+			color: #001e42;
 			font-size: 18px;
 			line-height: 22px;
 		}
-
 	}
 }
 
-
 .phones-header {
-	color: #FFFFFF;
+	color: #ffffff;
 	align-self: flex-end;
 
-	@media (max-width:$mobile) {
+	@media (max-width: $mobile) {
 		padding-bottom: rem(97);
 	}
 
@@ -219,33 +216,28 @@
 		font-size: rem(12);
 		line-height: math.div(15, 15);
 
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-
 
 			&:not(:last-child) {
 				margin-bottom: em(18, 15);
 			}
 		}
 
-
 		p {
 			display: inline-block;
 			width: rem(61);
 
-			@media (max-width:$mobile) {
-				color: #001E42;
-
+			@media (max-width: $mobile) {
+				color: #001e42;
 			}
-
 		}
 	}
 
 	// .phones-header__link
 	&__link {
-
 		span {
 			font-weight: 700;
 			@include adaptiveValue("font-size", 16, 10);
@@ -253,12 +245,13 @@
 
 			@media (any-hover: hover) {
 				&:hover {
-					text-decoration: underline;
+					text-decoration: none;
+					color: #00feff;
 				}
 			}
 
-			@media (max-width:$mobile) {
-				color: #001E42;
+			@media (max-width: $mobile) {
+				color: #001e42;
 				font-weight: 700;
 				font-size: 18px;
 				line-height: 22px;
@@ -271,8 +264,6 @@
 //Burger
 
 .icon-menu {
-	// display: none;
-
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
@@ -281,7 +272,7 @@
 		cursor: pointer;
 		z-index: 5;
 		right: 0;
-		top: 0;
+		top: -3px;
 
 		span,
 		&::before,
@@ -292,9 +283,9 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #Ffff;
+			background-color: #ffff;
 
-			@media (max-width:$mobile) {
+			@media (max-width: $mobile) {
 				background-color: #ffff;
 			}
 		}
@@ -316,13 +307,13 @@
 		}
 
 		.menu-open & {
-
 			span {
 				width: 0;
 			}
 
 			&::before,
-			&::after {}
+			&::after {
+			}
 
 			&::before {
 				top: calc(50% - rem(1));
